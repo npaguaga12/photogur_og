@@ -1,0 +1,16 @@
+<div class="signups">
+  <%= link_to "Dashboard", root_path %>
+</div>
+
+
+<h1>Search Users</h1>
+<div class= "search"><%= form_tag search_path do %>
+  <%= search_field_tag :term %>
+  <%= submit_tag "Go!" %>
+<% end %></div>
+
+
+<h2>Search Results</h2>
+<% if @result %>
+  <%= link_to @result.first_name, @result %>
+<% end %>

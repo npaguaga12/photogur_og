@@ -1,0 +1,10 @@
+
+<br>
+
+<div>
+<%= link_to "Search", search_path %>
+</div>
+<br>
+<% @pictures.each do |pic| %>
+<%= image_tag pic.image.medium.url, :style => "border-radius:15px"%>
+<% end %>

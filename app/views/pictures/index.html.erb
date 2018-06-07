@@ -1,0 +1,29 @@
+<body>
+
+
+<div class="signups">
+      <% if current_user %>
+        <ul>
+          <li>Welcome to Photogur, <%= current_user.first_name %></li>
+          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+        </ul>
+      <% end %>
+
+ </div>
+
+
+<p id="notice"><%= notice %></p>
+
+
+<h1><%= @is_profile ? "My Profile" : "Dashboard" %></h1>
+<% if @is_profile %>
+<%= link_to "Dashboard", root_path %>
+<%= render "myprofile" %>
+<% else %>
+<%= link_to "My Profile", myprofile_path %>
+<%= render "dashboard" %>
+
+<% end %>
+
+
+</body>
